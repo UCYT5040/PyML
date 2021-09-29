@@ -12,10 +12,9 @@ class CustomCompenent(BaseComponent):
     if not id: self.id = uuid.uuid4().hex
   def set_location(self, location):
     self.location = location
-  def generate_raw_html(self):
-    return self.html
 class Header(BaseComponent):
-  ...
+  def __init__(self, level:int, content:str):
+    self.html = f'<h{level}>{content}</h{level}>'
 class Page:
   def __init__(self, title:str):
     self.title = title
